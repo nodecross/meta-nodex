@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$(echo $@ | grep libgit2)" ]; then
+    gcc $(echo $@ | sed -e 's/-I .[^ ]*\/recipe-sysroot\/usr\/include//')
+else
+    gcc $@
+fi
