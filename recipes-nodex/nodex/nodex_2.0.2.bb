@@ -28,3 +28,10 @@ INSANE_SKIP:${PN} += "already-stripped"
 # Only when libgit2 is compiled will the target header files be removed so that it can be compiled.
 SRC_URI += "file://mycc"
 export BUILD_CC = "${WORKDIR}/mycc"
+
+SRC_URI += "file://network.json"
+FILES:${PN} += "/home/root/.config/nodex/*"
+do_install:append() {
+  install -d ${D}/home/root/.config/nodex
+  install -m 0644 ${WORKDIR}/network.json ${D}/home/root/.config/nodex
+}
