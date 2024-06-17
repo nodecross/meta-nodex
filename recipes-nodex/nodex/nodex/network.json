@@ -1,0 +1,7 @@
+{
+  "secret_key": "<your secret key>",
+  "project_did": "<did of your project>",
+  "recipient_dids": null,
+  "studio_endpoint": null,
+  "heartbeat": null
+}
