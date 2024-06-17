@@ -28,5 +28,3 @@ INSANE_SKIP:${PN} += "already-stripped"
 # Only when libgit2 is compiled will the target header files be removed so that it can be compiled.
 SRC_URI += "file://mycc"
 export BUILD_CC = "${WORKDIR}/mycc"
-
-# export LIBGIT2_NO_VENDOR = "1"
