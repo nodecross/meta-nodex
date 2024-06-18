@@ -3,9 +3,9 @@ This repository packages the [nodex agent](https://github.com/nodecross/nodex) a
 ## Dependencies
 
 - URI: git://git.openembedded.org/meta-openembedded
-  - branch: mickledore
+  - branch: kirkstone
 - URI: https://github.com/rust-embedded/meta-rust-bin.git
-  - branch: master
+  - branch: 456f04d635d6662426008eb6a508b631fd374639
 
 ## How to use
 
