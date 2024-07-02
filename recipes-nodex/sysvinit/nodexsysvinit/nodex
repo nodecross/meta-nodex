@@ -1,0 +1,56 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides: nodex
+# Required-Start:	$syslog $local_fs $network
+# Required-Stop:	$syslog $local_fs $network
+# Short-Description: T
+### END INIT INFO
+
+. /etc/init.d/functions
+
+PIDFILE=/var/run/nodex.pid
+DAEMON=/usr/bin/nodex-agent
+NAME=nodex-agent
+start() {
+	echo "Starting $NAME"
+	umask 027
+	export HOME=/home/root
+	start-stop-daemon --start --background --user root --name $NAME --make-pidfile --pidfile $PIDFILE --exec $DAEMON --
+	if [ $? -ne 0 ]; then
+		exit 1
+	fi
+	exit 0
+}
+
+stop() {
+	echo "Stopping $NAME"
+	start-stop-daemon --stop --name $NAME --pidfile $PIDFILE --exec $DAEMON --
+	if [ $? -ne 0 ]; then
+		exit 1
+	fi
+}
+
+force_reload() {
+	stop
+	start
+}
+
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	force-reload)
+		force_reload
+		;;
+	restart)
+		stop
+		start
+		;;
+
+	*)
+		echo "$Usage: $NAME {start|stop|force-reload|restart}"
+		exit 2
+esac
