@@ -20,3 +20,7 @@ IMAGE_INSTALL:append = " nodex nodexsystemd"
 IMAGE_INSTALL:append = " nodex nodexsysvinit"
 ```
 5. Modify the contents of `/path/to/meta-nodex/recipes-nodex/nodex/nodex/network.json` to suit your environment.
+
+> [!WARNING]
+> SysVinit script is not production ready.
+> When using SysVinit, the nodex init script does not output an error log.
