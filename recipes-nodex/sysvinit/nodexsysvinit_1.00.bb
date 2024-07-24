@@ -7,6 +7,7 @@ do_install:append() {
     install -d 644 ${D}${sysconfdir}/init.d
     install -m 0755 ${WORKDIR}/nodex ${D}${sysconfdir}/init.d/nodex
     install -d 644 ${D}${sysconfdir}/rc3.d/
+    install -d 644 ${D}${sysconfdir}/rc5.d/
     ln -sf ../init.d/nodex ${D}${sysconfdir}/rc5.d/S99nodex
     ln -sf ../init.d/nodex ${D}${sysconfdir}/rc5.d/K99nodex
 }

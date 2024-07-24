@@ -4,13 +4,9 @@ DEPENDS += " zlib"
 do_compile[network] = "1"
 
 SRC_URI += "git://git@github.com/nodecross/nodex.git;protocol=https;nobranch=1"
-SRCREV = "7d6cfbac3aba77e1c7a706cac543048e4e6fb30b"
+SRCREV = "a4b8f863bf1158ccb9f8fd63fcf9f2d53ea46eab"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = ""
-
-SRC_URI += " \
-    file://0001-Migrate-aes-gcm-siv.patch \
-"
 
 LIC_FILES_CHKSUM = " \
     file://LICENSE;md5=86d3f3a95c324c9479bd8986968f4327 \
